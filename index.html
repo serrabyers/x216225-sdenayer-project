@@ -1,0 +1,632 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./assets/stylesheets/w3.css">
+<!--unedited w3 css
+https://www.w3schools.com/w3css/4/w3.css-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap">
+<!--carousel bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <title>Document</title>
+</head>
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+    body, h3 {font-family: "Rubik Bubbles", cursive;}
+  
+    body, html {
+      height: 100%;
+      color: rgb(5, 0, 0);
+      line-height: 1.8;
+    }
+
+    button{
+      color:rgb(168, 8, 8);
+    }
+    
+    /* Create a Parallax Effect */
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    /* First image (Logo. Full height) */
+    .bgimg-1 {
+      background-image: url('./assets/images/skate.home.jpg');
+      min-height: 100%;
+    }
+    
+    /* Second image (Portfolio) */
+    .bgimg-2 {
+      background-image: url("/w3images/parallax2.jpg");
+      min-height: 400px;
+    }
+    
+    /* Third image (Contact) */
+    .bgimg-3 {
+      background-image: url("/w3images/parallax3.jpg");
+      min-height: 400px;
+    }
+    
+    .w3-wide {letter-spacing: 10px;}
+    .w3-hover-opacity {cursor: pointer;}
+    
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+      .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+      }
+      /*carousel css*/
+    }
+    section>div.carousel-area {
+      width: 70%;
+      padding: 40px 40px 40px 40px;
+  
+    }
+      /*table css*/
+      table#your-table-items {
+      border-collapse: collapse;
+      /* in inspector mode - easier to see the difference between collapse and no collapse */
+      border: 1px solid rgba(154, 154, 154, 0.75);
+      text-align: center;
+    }
+
+    table#your-table-items th:nth-child(1),
+    table#your-table-items td:nth-child(1) {
+      width: 40%;
+    }
+
+    table#your-table-items th:nth-child(2),
+    table#your-table-items td:nth-child(2) {
+      width: 40%;
+    }
+
+    table#your-table-items th:nth-child(3),
+    table#your-table-items td:nth-child(3) {
+      width: 40%;
+    }
+
+    table#your-table-items th:nth-child(4),
+    table#your-table-items td:nth-child(4) {
+      width: 40%;
+    }
+
+    table#your-table-items thead {
+      font-size: 0.7em;
+      text-transform: uppercase;
+    }
+
+    table#your-table-items thead th {
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 8px;
+    }
+
+    table#your-table-items thead th:hover {
+      color: #fff;
+      background-color: #339999;
+      cursor: pointer;
+    }
+
+    table#your-table-items thead th.tablesorter-headerAsc,
+    table#your-table-items thead th.tablesorter-headerDesc {
+      background-color: rgba(0, 102, 102, 0.8);
+    }
+
+    table#your-table-items tbody {
+      font-size: 0.9em;
+      line-height: 15px;
+    }
+
+    /*** make sure table#your-table-items tbody tr:nth-child(even) defined before table#your-table-items tbody tr:hover */
+    /*** otherwise, it would need to define table#your-table-items tbody tr:nth-child(even):hover*/
+    table#your-table-items tbody tr:nth-child(even) {
+      background: rgba(154, 154, 154, 0.25);
+    }
+
+    table#your-table-items tbody tr:hover {
+      color: #fff;
+      background-color: #339999;
+    }
+
+    table#your-table-items tbody td {
+      padding: 8px 20px;
+      border-top: 1px solid rgba(154, 154, 154, 0.75);
+      border-right: 1px solid rgba(154, 154, 154, 0.75);
+    }
+
+    table#your-table-items tbody td img {
+      width: 100%;
+      margin: 0 10px 0 0;
+      border: 1px solid rgba(154, 154, 154, 0.75);
+    }
+    /*accordion*/
+    .collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+/*youtube css*/
+.flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding: 0;
+    }
+    </style>
+<body>
+    <!-- Navbar (sit on top) -->
+<div class="w3-top w3-black">
+    <div class="w3-bar" id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true"></i>HOME</a>
+      <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-odnoklassniki" aria-hidden="true"></i> ABOUT</a>
+      <a href="#gallery" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-bomb" aria-hidden="true"></i> PRODUCTS</a>
+      <a href="#comissions" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-star-half-o" aria-hidden="true"></i> COMISSIONS</a>
+      <a href="#tricks" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-cubes" aria-hidden="true"></i> TRICKS</a>
+      <a href="#clips" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-smile-o" aria-hidden="true"></i>SKATER PROFILE</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+        <i class="fa fa-search "></i>
+      </a>
+    </div>
+  
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+      <a href="#gallery" class="w3-bar-item w3-button" onclick="toggleFunction()">PRODUCTS</a>
+      <a href="#comissions" class="w3-bar-item w3-button" onclick="toggleFunction()">COMISSIONS</a>
+      <a href="#tricks" class="w3-bar-item w3-button" onclick="toggleFunction()">TRICKS</a>
+      <a href="#clips" class="w3-bar-item w3-button" onclick="toggleFunction()">CLIPS</a>
+      <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+    </div>
+  </div>
+  
+  <!-- First Parallax Image with Logo Text -->
+  <div class="bgimg-1 w3-display-container" id="home">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <span class="w3-center w3-padding-large w3-black w3-wide w3-xxlarge ">SKATE <span class="w3-hide-small">2</span> RAW</span>
+    </div>
+  </div>
+  
+  <!-- Container (About Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center w3-padding-32 w3-black"><i class="fa fa-odnoklassniki" aria-hidden="true"></i>   ABOUT US</h3>
+    <h3 class="w3-center">We love skating.</h3>
+    <p> We have loved skating for a long time; so much so that we have created a brand solely based on making the skate life more fun. We started by combining our passions- skating and art.
+      So far we offer rad griptape, decks, and hoodies. We give the option for customization for every order, we want to make skate products YOU love. We also created this site to use as a information source- a place 
+      where experts and newbies can learn and gather ideas.  
+    </p>
+    <br>
+
+      <section>
+        <div class="carousel-area w3-row w3-center" style="width:40%" float="right" >
+          <h3>THE CREATORS</h3>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+    
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="./assets/images/j.noseman.jpg" alt="J BYERS" style="width:100%;" />
+                <div class="carousel-caption">
+                  <h5>J BYERS</h5>
+                </div>
+              </div>
+    
+              <div class="item">
+                <img src="./assets/images/serra.j.jpg" alt="J & SERRA" style="width:100%;" />
+                <div class="carousel-caption">
+                  <h5>J & SERRA</h5>
+                </div>
+              </div>
+              <div class="item">
+                <img src="./assets/images/serra.sk8.jpg" alt="SERRA" style="width:100%;" />
+                <div class="carousel-caption">
+                  <h5>SERRA</h5>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!--CAROUSEL JAVA-->
+      <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script type="text/JavaScript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </div>
+
+  </div>
+  
+  
+  
+  <!-- Container (Portfolio Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="gallery">
+    <h3 class="w3-center w3-padding-32 w3-black"><i class="fa fa-bomb" aria-hidden="true"></i>PRODUCTS</h3>
+    <h3 class="w3-center">Here are some of my latest products and comissions<br></h3><p class="w3-center"> Click on the images to make them bigger</em></p><br>
+  
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m3">
+        <img src="/assets/images/skate.7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="HOUSE GRIP">HOUSE GRIP
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="/assets/images/skate.1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="FALL DECK">FALL DECK
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="/assets/images/skate.2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="NO PEACE DECK">NO PEACE DECK
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="/assets/images/skate.3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="MR.CHICKEN GRIP">MR.CHICKEN GRIP
+      </div>
+    </div>
+  
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img src="/assets/images/skate.4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="KOI DECK">KOI DECK
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="/assets/images/skate.5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="SK8R BOY HOODIE">SK8R BOY HOODIE
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="/assets/images/skate.6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="FIRE HOODIE">FIRE HOODIE
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="/assets/images/skate.8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="TBD">CURSIVE DECK
+      </div>
+      <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    </div>
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+  </div>
+  
+  <!-- Third Parallax Image with Portfolio Text -->
+  <div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+       <span class="w3-xxlarge w3-text-white w3-wide"><i class="fa fa-star-half-o" aria-hidden="true"></i>COMISSIONS</span>
+    </div>
+  </div>
+  
+  <!-- Container (COMISSIONS Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="comissions">
+    <h3 class="w3-center w3-padding-32 w3-black"><i class="fa fa-star-half-o" aria-hidden="true"></i>REQUEST A COMISSION</h3>
+    <p class="w3-center">LET US KNOW WHETHER YOU WANT A CUSTOM DECK, GRIP, OR HOODIE. INCLUDE YOUR GENERAL IDEA, WE'LL GET IN TOUCH WITH YOU FOR THE DETAILS LATER</p>
+  
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m4 w3-container">
+        <img src="/assets/images/skate.8.jpg" class="w3-image w3-round" style="width:100%">
+       
+      </div>
+      <div class="w3-col m8 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
+          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+        </div>
+        <p>YOUR INFO:</p>
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-amber w3-right w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Container (TRICKS Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="tricks">
+    <h3 class="w3-center w3-padding-32 w3-black"><i class="fa fa-cubes" aria-hidden="true"></i>TRICKS</h3>
+  <!--TABLE-->
+  <article>
+    <div>
+      <h3>TRICK DIRECTORY</h3>
+      <p>
+        Here's a little table to help you get some idea what to learn next. You might also use it to create new lines to skate. Skate hard!
+      </p>
+      <P> KEY: Backside(BS), Frontside(FS), Nollie(N), Fakie(F), Switch (SW)</P>
+      <table id="your-table-items">
+        <thead>
+          <tr>
+            <th>TRICK</th>
+            <th>VARIATION</th>
+            <th>TYPE</th>
+            <th>DIFFICULTY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kickflip</td>
+            <td>N, F, SW</td>
+            <td>Flip trick</td>
+            <td>Intermediate</td>
+          </tr>
+          <tr>
+            <td>Heelflip</td>
+            <td>N, F, SW</td>
+            <td>Flip trick</td>
+            <td>Intermediate</td>
+          </tr>
+          <tr>
+            <td>Pop-shuv</td>
+            <td>N, F, SW, FS, BS</td>
+            <td>Flip trick</td>
+            <td>Beginner</td>
+          </tr>
+          <tr>
+            <td>Treflip</td>
+            <td>N, F, SW</td>
+            <td>Flip trick</td>
+            <td>Expert</td>
+          </tr>
+          <tr>
+            <td>Feeble</td>
+            <td>BS, FS</td>
+            <td>Vert</td>
+            <td>Expert</td>
+          </tr>
+          <tr>
+            <td>Boardslide</td>
+            <td>BS, FS</td>
+            <td>Vert</td>
+            <td>Beginner</td>
+          </tr>
+          <tr>
+            <td>Smith</td>
+            <td>BS, FS</td>
+            <td>Vert</td>
+            <td>Expert</td>
+          </tr>
+          <tr>
+            <td>Impossible</td>
+            <td>N, F, SW</td>
+            <td>Flip trick</td>
+            <td>Expert</td>
+          </tr>
+          <tr>
+            <td>Blunt</td>
+            <td>BS, FS</td>
+            <td>Vert</td>
+            <td>Expert</td>
+          </tr>
+          <tr>
+            <td>Feeble</td>
+            <td>BS, FS</td>
+            <td>Vert</td>
+            <td>Intermediate</td>
+          </tr>
+          <tr>
+            <td>Tail Slide</td>
+            <td>BS, FS</td>
+            <td>Vert</td>
+            <td>Intermediate</td>
+          </tr>
+          <tr>
+            <td>FS 360</td>
+            <td>N, F, SW</td>
+            <td>Flip trick</td>
+            <td>Expert</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+  <!-- TABLE JAVA -->
+  <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/JavaScript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+  <!-- BEG JavaScript -->
+  <script>
+    $(document).ready(function () {
+      $("table#your-table-items").tablesorter({
+        sortList: [[2, 0]],
+        CssAsc: "tablesorter-headerAsc",
+        CssDesc: "tablesorter-headerDesc"
+      });
+    });
+  </script>
+  <!--accordion-->
+  <br>
+  <br>
+  <h3>FLIP TRICKS VS VERT</h3>
+<button class="w3-amber w3-border-0 collapsible">FLIP TRICKS</button>
+<div class="content">
+  <p>A flip trick is a type of skateboarding trick in which the skateboard flips in a particular way. In many tricks, the skateboard flips upside down and/or end over end. Many small tricks can be combined to form more complex flip tricks. Most flip tricks require an initial ollie, otherwise they are nearly impossible to execute. Flip tricks are usually performed while the skateboarder is rolling, although they may be performed while stationary.
+ Most tricks have specific names in the system of skateboarding flip tricks. The basic tricks are the kickflip, heelflip, and pop shove-it. Though most of the simple combinations have names, such as varial kickflip, hardflip, inward heelflip, varial heelflip, most can be described by using rotation math and the basic name (e.g. frontside 360 heelflip, 360 kickflip). Skateboarding terminology is a sort of 'jargon' as many terms in skateboarding can be used to refer to more than one trick. For example, a "360 kickflip" could mean a 360 pop shove-it with a kickflip, or a 360 body-and-board rotation with a kickflip.</p>
+ <p><a href="http://dictionary.sensagent.com/FLIP%20TRICKS/en-en/">Source: Sensagent</a></p>
+</div>
+<button class="w3-aqua w3-border-0 collapsible">VERT</button>
+<div class="content">
+  <p>Vert skateboarding is an aerial style that involves skating a transition from a horizontal surface to a vertical one, such as you find in a ramp, half-pipe, bowl, or pool. In street-style vert skating, skaters use rails, stairs, and any other ledges that can be found in an urban environment to perform aerial tricks. Vert skaters need plenty of speed and momentum to get enough air to pull off complex aerial maneuvers or complete grinds.</p>
+  <p><a href="https://www.masterclass.com/articles/understanding-vert-skating">Source: Master class</a></p>
+</div>
+<!--accordion java-->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </div>
+  <!-- Container (CLIPS Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="clips">
+    <h3 class="w3-center w3-padding-32 w3-black"><i class="fa fa-smile-o" aria-hidden="true"></i>SKATER PROFILE</h3>
+    <div class="w3-row w3-padding-64" id="about">
+      <div class="w3-col m6 w3-padding-large w3-hide-small">
+       <img src="/assets/images/j.noseman.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+      </div>
+  
+      <div class="w3-col m6 w3-padding-large">
+        <h3 class="w3-center">J Byers</h3>
+        <h3 class="w3-center">visit <a href="w3-aqua https://www.instagram.com/jay.2raw/?hl=en">@jay.2raw</a> on instagram</h3><br/>
+        <p class="w3-large"> Hi, I'm J, owner and cofounder of Sk8 2 Raw. I grew up here in Northern California about an hour east of the west coast. It's always been a dream to create a space where other skaters can express themselves & feel like they have somehthing to relate to. I started skating during the lockdown in 2020 due to the Corona Virus. Little did I know it would connect me to some of the coolest people I've ever met and led to many life long friendships. Since then, I've been finding more ways to express my love for skating. Check out my clips and keep supporting!</p>
+        <p class="w3-large w3-text-grey w3-hide-medium"></p>
+      </div>
+    </div>
+    
+    <!--youtube vid 1-->
+    <h3 class="w3-center w3-xxlarge"><i class="fa fa-youtube-play" aria-hidden="true"></i>CLIPS</h3>
+        <section>
+        <span>
+          <div class="flex-container">
+            <!-- start with 1 video and add more to watch the alignment of flex display -->
+            <div style="width: 500px; word-wrap: break-word;">
+              <h5>15 Nov 2018</h5>
+              
+              <iframe width="600" class="w3-center" height="315" src="https://www.youtube.com/embed/ARsJUq9gpoU" title="before departure"
+                frameborder="0" allow="autoplay; encrypted-media">
+              </iframe>
+            </div>
+          </div>
+    <!--youtube vid 2-->
+          <div class="flex-container">
+            <!-- start with 1 video and add more to watch the alignment of flex display -->
+            <div style="width: 500px; word-wrap: break-word;">
+              <h5>15 Nov 2018</h5>
+              <iframe width="600" height="315" src="https://www.youtube.com/embed/5SXlPdV-z8A" title="bay area mix"
+                frameborder="0" allow="autoplay; encrypted-media">
+              </iframe>
+            </div>
+          </div>
+          </span>
+    <!--youtube vid 3-->
+    <div class="flex-container">
+      <!-- start with 1 video and add more to watch the alignment of flex display -->
+      <div style="width: 500px; word-wrap: break-word;">
+        <h5>15 Nov 2018</h5>
+        <iframe width="600" height="315" src="https://www.youtube.com/embed/oSo8Q9BNh9I" title="reno nevada mix"
+          frameborder="0" allow="autoplay; encrypted-media">
+        </iframe>
+      </div>
+    </div>
+
+        </section>
+  </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </footer>
+   
+  <script>
+  // Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+  
+  // Change style of navbar on scroll
+  window.onscroll = function() {myFunction()};
+  function myFunction() {
+      var navbar = document.getElementById("myNavbar");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+      } else {
+          navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+      }
+  }
+  
+  // Used to toggle the menu on small screens when clicking on the menu button
+  function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+      } else {
+          x.className = x.className.replace(" w3-show", "");
+      }
+  }
+  </script>
+</body>
+</html>
